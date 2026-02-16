@@ -1,0 +1,14 @@
+res://Scene/Title Screen.tscn
+res://Scene/Level2.tscn
+res://Music-L1.tscn
+res://Scene/Music-L1.tscn
+res://Scene/Level1.tscn
+res://Scene/music_l_1.gd
+res://Scene/level_1.gd
+res://Script/falling_platform.gd
+res://Script/ende.gd
+res://Scene/coin.tscn
+res://Script/death_zone.gd
+res://Scene/Level_Selection.tscn
+res://Script/level_1.gd
+res://Script/character_body_2d.gd

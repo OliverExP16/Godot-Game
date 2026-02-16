@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmf2kqg8on17b"
+path="res://.godot/imported/Story of Maple.wav-4c8c6a16f6459209b6b3c34a97f1ae75.sample"
+
+[deps]
+
+source_file="res://Music/Story of Maple.wav"
+dest_files=["res://.godot/imported/Story of Maple.wav-4c8c6a16f6459209b6b3c34a97f1ae75.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

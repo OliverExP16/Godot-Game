@@ -1,0 +1,20 @@
+# Godot 4+ specific
+.godot/                # Engine-Konfiguration
+/android/              # Android Build-Ordner
+.export/               # Exportierte Builds
+.import/               # Importierte Assets (Cache)
+*.import               # einzelne Import-Dateien
+
+# Temporäre Dateien
+*.log
+*.tmp
+*.swp
+
+# OS-spezifisch
+.DS_Store
+Thumbs.db
+
+# Optional: große Assets mit Git LFS tracken
+# *.png
+# *.wav
+# *.obj

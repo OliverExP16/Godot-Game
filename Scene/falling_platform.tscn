@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c0xfivpgpfp6n"]
+
+[ext_resource type="Texture2D" uid="uid://c0etmdxfx70wk" path="res://Sprite/On (32x10).png" id="1_upuyj"]
+[ext_resource type="Script" uid="uid://dl1nqgaisuo2b" path="res://Script/falling_platform.gd" id="2_05mdm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sksul"]
+atlas = ExtResource("1_upuyj")
+region = Rect2(0, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qrxl"]
+atlas = ExtResource("1_upuyj")
+region = Rect2(32, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k70xh"]
+atlas = ExtResource("1_upuyj")
+region = Rect2(64, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vqcd"]
+atlas = ExtResource("1_upuyj")
+region = Rect2(96, 0, 32, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r4fk7"]
+animations = [{
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_sksul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qrxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k70xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vqcd")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_idkun"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huq41"]
+size = Vector2(32.000004, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxty0"]
+size = Vector2(32, 5)
+
+[node name="Falling Platform" type="AnimatedSprite2D" unique_id=1071859701]
+scale = Vector2(0.81249976, 2.35)
+sprite_frames = SubResource("SpriteFrames_r4fk7")
+animation = &"Idle"
+frame_progress = 0.6208458
+script = ExtResource("2_05mdm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=330472203]
+visible = false
+physics_material_override = SubResource("PhysicsMaterial_idkun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=120436270]
+visible = false
+position = Vector2(-7.512022e-05, 0)
+shape = SubResource("RectangleShape2D_huq41")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=979878144]
+visible = false
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=271715057]
+visible = false
+position = Vector2(-7.512022e-05, -5.680856)
+shape = SubResource("RectangleShape2D_qxty0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

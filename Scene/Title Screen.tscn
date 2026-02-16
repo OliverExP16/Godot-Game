@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://d3qp5mtro8tqb"]
+
+[ext_resource type="Script" uid="uid://clv53d3e6xmd1" path="res://Script/Title_Screen.gd" id="1_lb0x8"]
+[ext_resource type="Texture2D" uid="uid://dqm4g5wfp2o2m" path="res://Background/1.png" id="3_a8a5h"]
+[ext_resource type="Texture2D" uid="uid://c0bojbkhbm0la" path="res://Background/2.png" id="4_tvk31"]
+[ext_resource type="Script" uid="uid://dv142g04byy3a" path="res://Script/selection.gd" id="5_lb0x8"]
+
+[sub_resource type="GDScript" id="GDScript_tvk31"]
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scene/Level1.tscn\"); 
+"
+
+[node name="Node2D" type="Node2D" unique_id=296366810]
+script = ExtResource("1_lb0x8")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=577008531]
+position = Vector2(582, 325)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1325748234]
+position = Vector2(465, 146)
+volume_db = -10.0
+autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=769763932]
+position = Vector2(578.5, 327.5)
+scale = Vector2(2.015625, 2.0092592)
+texture = ExtResource("3_a8a5h")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1226495429]
+position = Vector2(579.5, 327)
+scale = Vector2(2.0052083, 1.9938271)
+texture = ExtResource("4_tvk31")
+
+[node name="Start" type="Button" parent="." unique_id=63286437]
+offset_left = 437.0
+offset_top = 301.0
+offset_right = 762.0
+offset_bottom = 393.0
+text = "Start Game"
+script = SubResource("GDScript_tvk31")
+
+[node name="Selection" type="Button" parent="." unique_id=81683543]
+offset_left = 438.0
+offset_top = 425.0
+offset_right = 763.0
+offset_bottom = 517.0
+text = "Level Selection"
+script = ExtResource("5_lb0x8")
+
+[node name="Label" type="Label" parent="." unique_id=2069838554]
+offset_left = 345.0
+offset_top = 142.0
+offset_right = 845.0
+offset_bottom = 309.0
+theme_override_font_sizes/font_size = 50
+text = "Fox"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
+[connection signal="pressed" from="Selection" to="Selection" method="_on_pressed"]
