@@ -1,0 +1,12 @@
+1 Zu Pfad: cd /pfad/zu/deinem/projekt
+
+2 Updates holen: git pull
+
+3 Check was geändert wurde: git Status
+
+4 Alles hinzufügen: git add .
+
+5 kurze Beschreibung: git commit -m "kurze Beschreibung"
+
+
+6 Hochladen: git push

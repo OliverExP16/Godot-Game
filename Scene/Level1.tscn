@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ccg8l3bvfwped" path="res://TileMaps/clouds/Cloud 10.png" id="4_0q11h"]
 [ext_resource type="Texture2D" uid="uid://gjytw46kytts" path="res://Fox/Sit.png" id="4_cu1y2"]
 [ext_resource type="AudioStream" uid="uid://cusxwtoxvp82l" path="res://Sounds/jump.wav" id="5_8m71o"]
+[ext_resource type="Texture2D" uid="uid://bg5s7b1njtero" path="res://Fox/fox_fall_strip5.png" id="6_48ekd"]
 [ext_resource type="Texture2D" uid="uid://dqm4g5wfp2o2m" path="res://Background/1.png" id="6_xb73i"]
 [ext_resource type="Texture2D" uid="uid://ljs34ngymnl6" path="res://TileMaps/Terrain (16x16).png" id="8_fpa3h"]
 [ext_resource type="Texture2D" uid="uid://dbiieh3cpea6" path="res://Fox/sit02.png" id="8_qblvq"]
@@ -486,6 +487,26 @@ sources/5 = SubResource("TileSetAtlasSource_4cok2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3sxq"]
 size = Vector2(12.997574, 19.99762)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocfax"]
+atlas = ExtResource("6_48ekd")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jbo4"]
+atlas = ExtResource("6_48ekd")
+region = Rect2(60, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2vc3"]
+atlas = ExtResource("6_48ekd")
+region = Rect2(120, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uud47"]
+atlas = ExtResource("6_48ekd")
+region = Rect2(180, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xma87"]
+atlas = ExtResource("6_48ekd")
+region = Rect2(240, 0, 60, 60)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_10jwb"]
 atlas = ExtResource("1_kyxg0")
 region = Rect2(0, 0, 60, 60)
@@ -736,6 +757,26 @@ region = Rect2(420, 0, 60, 60)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5py54"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocfax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jbo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2vc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uud47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xma87")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 0.8,
 "texture": SubResource("AtlasTexture_10jwb")
@@ -1350,7 +1391,7 @@ shape = SubResource("RectangleShape2D_s3sxq")
 position = Vector2(59.999977, -17)
 scale = Vector2(1.0749992, 0.96666664)
 sprite_frames = SubResource("SpriteFrames_5py54")
-animation = &"Idle_80"
+animation = &"Fall"
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=649164758]
 position = Vector2(56, -64)
@@ -1405,7 +1446,7 @@ animation = &"Idle"
 [node name="Coins" type="TileMap" parent="." unique_id=1502347589]
 tile_set = SubResource("TileSet_xj5bp")
 format = 2
-layer_0/tile_data = PackedInt32Array(1310765, 5, 65536, 1310766, 5, 65536, 1310767, 5, 65536, 917582, 5, 65536, 917583, 5, 65536, 917584, 5, 65536, 917585, 5, 65536, 1245298, 5, 65536, 1245292, 5, 65536, 1245304, 5, 65536, 1245313, 5, 65536, 1245319, 5, 65536, 1179813, 5, 65536, 1179816, 5, 65536, 1179802, 5, 65536, 1179806, 5, 65536, 1245316, 5, 65536, 1179824, 5, 65536, 1179828, 5, 65536, 786644, 5, 65536, 786645, 5, 65536, 786636, 5, 65536, 786637, 5, 65536, 1179880, 5, 65536, 1179886, 5, 65536, 1179874, 5, 65536, 1179893, 5, 65536, 1179898, 5, 65536, 1179902, 5, 65536, 1179907, 5, 65536, 1179914, 5, 65536, 1179920, 5, 65536, 1179926, 5, 65536, 1179932, 5, 65536, 1245478, 5, 65536, 1245479, 5, 65536, 1179839, 5, 65536, 1179952, 5, 65536, 1179956, 5, 65536, 1179960, 5, 65536)
+layer_0/tile_data = PackedInt32Array(1310765, 5, 65536, 1310766, 5, 65536, 1310767, 5, 65536, 917582, 5, 65536, 917583, 5, 65536, 917584, 5, 65536, 917585, 5, 65536, 1245298, 5, 65536, 1245292, 5, 65536, 1245304, 5, 65536, 1245313, 5, 65536, 1245319, 5, 65536, 1179813, 5, 65536, 1179816, 5, 65536, 1179802, 5, 65536, 1179806, 5, 65536, 1245316, 5, 65536, 1179824, 5, 65536, 1179828, 5, 65536, 786644, 5, 65536, 786645, 5, 65536, 786636, 5, 65536, 786637, 5, 65536, 1179880, 5, 65536, 1179886, 5, 65536, 1179874, 5, 65536, 1179914, 5, 65536, 1179920, 5, 65536, 1179926, 5, 65536, 1179932, 5, 65536, 1245478, 5, 65536, 1245479, 5, 65536, 1179839, 5, 65536, 1179952, 5, 65536, 1179956, 5, 65536, 1179960, 5, 65536, 1179898, 5, 65536, 1179902, 5, 65536, 1179907, 5, 65536, 1179893, 5, 65536)
 
 [node name="Spikes" type="TileMap" parent="." unique_id=948152521]
 tile_set = SubResource("TileSet_7ynka")
@@ -1431,43 +1472,43 @@ frame_progress = 0.96412855
 [connection signal="pressed" from="Player/Button" to="Player" method="_on_button_pressed"]
 [connection signal="body_entered" from="Death_Zone" to="Death_Zone" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin" to="Coins/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142012" to="Coins/@Area2D@142012" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142013" to="Coins/@Area2D@142013" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142014" to="Coins/@Area2D@142014" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142015" to="Coins/@Area2D@142015" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142016" to="Coins/@Area2D@142016" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142017" to="Coins/@Area2D@142017" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142018" to="Coins/@Area2D@142018" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142019" to="Coins/@Area2D@142019" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142020" to="Coins/@Area2D@142020" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142021" to="Coins/@Area2D@142021" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142022" to="Coins/@Area2D@142022" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142023" to="Coins/@Area2D@142023" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142024" to="Coins/@Area2D@142024" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142025" to="Coins/@Area2D@142025" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142026" to="Coins/@Area2D@142026" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142027" to="Coins/@Area2D@142027" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142028" to="Coins/@Area2D@142028" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142029" to="Coins/@Area2D@142029" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142030" to="Coins/@Area2D@142030" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142031" to="Coins/@Area2D@142031" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142032" to="Coins/@Area2D@142032" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142033" to="Coins/@Area2D@142033" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142034" to="Coins/@Area2D@142034" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142035" to="Coins/@Area2D@142035" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142036" to="Coins/@Area2D@142036" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142037" to="Coins/@Area2D@142037" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142038" to="Coins/@Area2D@142038" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142039" to="Coins/@Area2D@142039" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142040" to="Coins/@Area2D@142040" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142041" to="Coins/@Area2D@142041" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142042" to="Coins/@Area2D@142042" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142043" to="Coins/@Area2D@142043" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142044" to="Coins/@Area2D@142044" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142045" to="Coins/@Area2D@142045" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142046" to="Coins/@Area2D@142046" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142047" to="Coins/@Area2D@142047" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142048" to="Coins/@Area2D@142048" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142049" to="Coins/@Area2D@142049" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@142050" to="Coins/@Area2D@142050" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124591" to="Coins/@Area2D@124591" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124592" to="Coins/@Area2D@124592" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124593" to="Coins/@Area2D@124593" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124594" to="Coins/@Area2D@124594" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124595" to="Coins/@Area2D@124595" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124596" to="Coins/@Area2D@124596" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124597" to="Coins/@Area2D@124597" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124598" to="Coins/@Area2D@124598" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124599" to="Coins/@Area2D@124599" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124600" to="Coins/@Area2D@124600" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124601" to="Coins/@Area2D@124601" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124602" to="Coins/@Area2D@124602" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124603" to="Coins/@Area2D@124603" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124604" to="Coins/@Area2D@124604" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124605" to="Coins/@Area2D@124605" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124606" to="Coins/@Area2D@124606" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124607" to="Coins/@Area2D@124607" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124608" to="Coins/@Area2D@124608" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124609" to="Coins/@Area2D@124609" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124610" to="Coins/@Area2D@124610" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124611" to="Coins/@Area2D@124611" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124612" to="Coins/@Area2D@124612" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124613" to="Coins/@Area2D@124613" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124614" to="Coins/@Area2D@124614" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124615" to="Coins/@Area2D@124615" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124616" to="Coins/@Area2D@124616" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124617" to="Coins/@Area2D@124617" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124618" to="Coins/@Area2D@124618" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124619" to="Coins/@Area2D@124619" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124620" to="Coins/@Area2D@124620" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124621" to="Coins/@Area2D@124621" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124622" to="Coins/@Area2D@124622" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124623" to="Coins/@Area2D@124623" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124624" to="Coins/@Area2D@124624" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124625" to="Coins/@Area2D@124625" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124626" to="Coins/@Area2D@124626" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124627" to="Coins/@Area2D@124627" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124628" to="Coins/@Area2D@124628" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@124629" to="Coins/@Area2D@124629" method="_on_body_entered"]
 [connection signal="body_entered" from="Ende" to="Ende" method="_on_body_entered"]

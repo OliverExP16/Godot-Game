@@ -24,8 +24,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _disable_collider() -> void:
 	$StaticBody2D/CollisionShape2D.disabled = true
 	
-	# nach 20 Sekunden respawn
-	await get_tree().create_timer(20.0).timeout
+	# nach 10 Sekunden respawn
+	await get_tree().create_timer(10.0).timeout
 	_respawn()
 
 

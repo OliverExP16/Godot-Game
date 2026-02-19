@@ -34,30 +34,52 @@ scale = Vector2(2.0052083, 1.9938271)
 texture = ExtResource("4_tvk31")
 
 [node name="Start" type="Button" parent="." unique_id=63286437]
-offset_left = 437.0
-offset_top = 301.0
-offset_right = 762.0
-offset_bottom = 393.0
+offset_left = 423.0
+offset_top = 170.0
+offset_right = 748.0
+offset_bottom = 262.0
 text = "Start Game"
 script = SubResource("GDScript_tvk31")
 
 [node name="Selection" type="Button" parent="." unique_id=81683543]
-offset_left = 438.0
-offset_top = 425.0
-offset_right = 763.0
-offset_bottom = 517.0
+offset_left = 426.0
+offset_top = 305.0
+offset_right = 751.0
+offset_bottom = 397.0
 text = "Level Selection"
 script = ExtResource("5_lb0x8")
 
-[node name="Label" type="Label" parent="." unique_id=2069838554]
-offset_left = 345.0
-offset_top = 142.0
-offset_right = 845.0
-offset_bottom = 309.0
+[node name="Title" type="Label" parent="." unique_id=2069838554]
+offset_left = 338.0
+offset_top = 6.999996
+offset_right = 838.0
+offset_bottom = 174.0
+rotation = 0.003426879
 theme_override_font_sizes/font_size = 50
-text = "Fox"
+text = "Fox-Expedition"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=494354823]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Controls" type="Button" parent="." unique_id=1581334060]
+offset_left = 426.0
+offset_top = 434.0
+offset_right = 751.0
+offset_bottom = 526.0
+text = "Controls"
+script = ExtResource("5_lb0x8")
+
+[node name="Label" type="Label" parent="." unique_id=2016895341]
+offset_left = 477.0
+offset_top = 616.0
+offset_right = 671.0
+offset_bottom = 639.0
+text = "Cretad by Fox-Expedition"
 
 [connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
 [connection signal="pressed" from="Selection" to="Selection" method="_on_pressed"]

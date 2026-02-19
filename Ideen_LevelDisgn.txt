@@ -1,0 +1,26 @@
+Level 1: Stacheln (X)
+
+Level 2: fallenede Platformen (X)
+
+Level 3: Trampoline (X)
+
+Level 5: Fan ()
+
+Level 6: Boxen ()
+
+Level 7: Saw ()
+
+Level 9:  Teleporter ()
+
+Level 9: Moving Platform () 
+
+Level 10: Fire  ()
+
+
+------------------------------------------
+
+Level 12-15: Alles Kombiniert aber schwerer
+
+Level ??? Min. 3 Level: Dashen oder Doppelsprung (vieleicht)
+
+Final Level: 

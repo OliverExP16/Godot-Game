@@ -16,7 +16,7 @@ var Limit_end = 120
 func respawn():
 	global_position = spawn_position
 	velocity = Vector2.ZERO
-	took_damage = false 
+	took_damage = false 	
 	
 func _physics_process(delta: float) -> void:
 	var active = (
@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 		Input.is_action_just_pressed("Jump")
 	)
 	
+
 	if active: 
 		Current_timer = 0 
 	else: 
@@ -49,8 +50,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Jump") and is_on_floor(): 
 		PlayerJumpsound.play()
 		velocity.y = JUMP_VELOCITY 
-		
-		
+	
+	
+	
 	var direction := Input.get_axis("Links", "Rechts")
 	if direction:
 		velocity.x = direction * SPEED
@@ -60,7 +62,12 @@ func _physics_process(delta: float) -> void:
 
 	# Animationen
 	if not is_on_floor():
-		animated_sprite.play("Jump")
+		if velocity.y < -10:
+			animated_sprite.play("Jump")
+		elif velocity.y > 10:
+			animated_sprite.play("Fall")
+		else:
+			animated_sprite.play("Jump") # oder "Fall" oder eigene "Float"
 	else:
 		if direction:
 			animated_sprite.play("Run")
@@ -75,6 +82,8 @@ func _physics_process(delta: float) -> void:
 			
 	move_and_slide()
 
-
+func bounce(force: float): 
+	velocity.y = force
+	
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scene/Title Screen.tscn")

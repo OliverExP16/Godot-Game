@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://ce1aoqy3w01x0"]
+
+[ext_resource type="Script" uid="uid://bbc0uq6ih8xb3" path="res://Script/fan.gd" id="1_5epdy"]
+[ext_resource type="Texture2D" uid="uid://qofvdecfyaeh" path="res://Sprite/On (24x8).png" id="1_qy2kr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8lr7h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qad7h"]
+atlas = ExtResource("1_qy2kr")
+region = Rect2(0, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gafm7"]
+atlas = ExtResource("1_qy2kr")
+region = Rect2(24, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sb6u"]
+atlas = ExtResource("1_qy2kr")
+region = Rect2(48, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy66a"]
+atlas = ExtResource("1_qy2kr")
+region = Rect2(72, 0, 24, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tg70d"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Off ",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_qad7h")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_gafm7")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_6sb6u")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_qy66a")
+}],
+"loop": true,
+"name": &"On",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jmuk"]
+size = Vector2(46, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lr7h"]
+size = Vector2(46, 117)
+
+[node name="Fan" type="StaticBody2D" unique_id=1431378180]
+physics_material_override = SubResource("PhysicsMaterial_8lr7h")
+script = ExtResource("1_5epdy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1715018164]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tg70d")
+animation = &"On"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=426535778]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_5jmuk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1850191378]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=672100762]
+position = Vector2(1, -66)
+shape = SubResource("RectangleShape2D_8lr7h")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -37,19 +37,19 @@ func _on_pressed() -> void:
 
 func _on_level_2_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://Scene/Level2.tscn\")
-	
-	
-	
-
 
 func _on_level_3_pressed() -> void:
-	get_tree().reload_current_scene() 
+	get_tree().change_scene_to_file(\"res://Scene/Level3.tscn\")
 	
 	
 
 
 func _on_back_pressed() -> void:
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file(\"res://Scene/Title Screen.tscn\")
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scene/Level4.tscn\")
 "
 
 [node name="Node2D" type="Node2D" unique_id=1145781775]
@@ -105,7 +105,14 @@ text = "Level Auswahl"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Button" type="Button" parent="." unique_id=1612047156]
+offset_left = 564.0
+offset_top = 347.0
+offset_right = 615.0
+offset_bottom = 394.0
+
 [connection signal="pressed" from="Level1" to="Level1" method="_on_pressed"]
 [connection signal="pressed" from="Level2" to="Level1" method="_on_level_2_pressed"]
 [connection signal="pressed" from="Level3" to="Level1" method="_on_level_3_pressed"]
 [connection signal="pressed" from="Back" to="Level1" method="_on_back_pressed"]
+[connection signal="pressed" from="Button" to="Level1" method="_on_button_pressed"]
