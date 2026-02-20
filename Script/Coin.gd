@@ -10,6 +10,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		hide()
+		GameManager.add_point()
 		col.disabled = true
 		coin_sound.play()
 		await coin_sound.finished

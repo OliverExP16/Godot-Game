@@ -1,5 +1,7 @@
-CanvasLayer
+TextureRect
 Label
+CanvasLayer
+Node
 Button
 TileMapLayer
 CollisionShape2D
@@ -10,6 +12,3 @@ Control
 TileMap
 Camera2D
 AudioStreamPlayer2D
-Sprite2D
-AnimationPlayer
-AnimationTree

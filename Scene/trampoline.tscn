@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://po2hluxwp1h1" path="res://Sprite/Jump (28x28).png" id="3_llvkf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mnpa"]
-size = Vector2(23, 5)
+size = Vector2(23, 7.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6a6xb"]
 atlas = ExtResource("2_ctbht")
@@ -49,24 +49,24 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6a6xb")
 }],
-"loop": true,
+"loop": false,
 "name": &"Idle",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_dcvto")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_7h1en")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_y4s77")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_n8oks")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_ibv1i")
 }, {
 "duration": 1.0,
@@ -87,7 +87,7 @@ animations = [{
 script = ExtResource("1_b3cig")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1162165698]
-position = Vector2(0, 1)
+position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_6mnpa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=672097374]

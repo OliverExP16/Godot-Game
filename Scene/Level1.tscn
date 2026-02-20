@@ -17,6 +17,8 @@
 [ext_resource type="Script" uid="uid://3cwjusbky12y" path="res://Script/Animtation.gd" id="9_lfbnc"]
 [ext_resource type="Texture2D" uid="uid://b2o1xnuk37s2q" path="res://Sprite/Start (Moving) (64x64).png" id="9_ofx4i"]
 [ext_resource type="Texture2D" uid="uid://btfvgbe1gahio" path="res://Sprite/Spikes.png" id="13_xb73i"]
+[ext_resource type="Script" uid="uid://crhlnqjg1vtpi" path="res://Script/Counter.gd" id="14_4ayub"]
+[ext_resource type="Texture2D" uid="uid://dy7h3sk87u2ir" path="res://Sprite/coin2_16x16 - Kopie.png" id="14_jpbf8"]
 [ext_resource type="PackedScene" uid="uid://deo04khjmu2ch" path="res://Scene/coin.tscn" id="14_xb73i"]
 [ext_resource type="Texture2D" uid="uid://cn24uojof2wtq" path="res://Sprite/End (Pressed) (64x64).png" id="19_0q11h"]
 [ext_resource type="Script" uid="uid://ct4tycs08hckw" path="res://Script/ende.gd" id="19_48ekd"]
@@ -484,26 +486,26 @@ sources/0 = SubResource("TileSetAtlasSource_df3rd")
 sources/1 = SubResource("TileSetAtlasSource_soi5t")
 sources/5 = SubResource("TileSetAtlasSource_4cok2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3sxq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ayub"]
 size = Vector2(12.997574, 19.99762)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ocfax"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nju04"]
 atlas = ExtResource("6_48ekd")
 region = Rect2(0, 0, 60, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8jbo4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o355s"]
 atlas = ExtResource("6_48ekd")
 region = Rect2(60, 0, 60, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r2vc3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w22ki"]
 atlas = ExtResource("6_48ekd")
 region = Rect2(120, 0, 60, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uud47"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_exxwm"]
 atlas = ExtResource("6_48ekd")
 region = Rect2(180, 0, 60, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xma87"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdqp5"]
 atlas = ExtResource("6_48ekd")
 region = Rect2(240, 0, 60, 60)
 
@@ -755,23 +757,23 @@ region = Rect2(360, 0, 60, 60)
 atlas = ExtResource("3_dwyiq")
 region = Rect2(420, 0, 60, 60)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5py54"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpbf8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ocfax")
+"texture": SubResource("AtlasTexture_nju04")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8jbo4")
+"texture": SubResource("AtlasTexture_o355s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r2vc3")
+"texture": SubResource("AtlasTexture_w22ki")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uud47")
+"texture": SubResource("AtlasTexture_exxwm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xma87")
+"texture": SubResource("AtlasTexture_tdqp5")
 }],
 "loop": true,
 "name": &"Fall",
@@ -831,7 +833,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6xk5g")
 }],
-"loop": true,
+"loop": false,
 "name": &"Idle_30",
 "speed": 8.0
 }, {
@@ -908,7 +910,7 @@ animations = [{
 "duration": 1.5,
 "texture": SubResource("AtlasTexture_mwdpr")
 }],
-"loop": true,
+"loop": false,
 "name": &"Idle_80",
 "speed": 24.0
 }, {
@@ -955,7 +957,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4cok2")
 }],
-"loop": false,
+"loop": true,
 "name": &"Jump",
 "speed": 14.0
 }, {
@@ -989,7 +991,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_it0h0"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_df3rd"]
 load_path = "res://.godot/imported/Back.png-84605d957b8e4b4c69076fffd09449d3.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g1s2"]
@@ -1377,41 +1379,6 @@ tile_set = SubResource("TileSet_df3rd")
 format = 2
 layer_0/tile_data = PackedInt32Array(589858, 1, 0, 589859, 65537, 0, 589860, 131073, 0, 589861, 196609, 0, 589862, 262145, 0, 589863, 327681, 0, 589864, 393217, 0, 589865, 458753, 0, 720947, 5, 0, 786483, 5, 1, 720948, 65541, 0, 786484, 65541, 1, 720949, 131077, 0, 786485, 131077, 1, 720950, 196613, 0, 786486, 196613, 1, 720951, 262149, 0, 786487, 262149, 1, 196683, 5, 0, 262219, 5, 1, 196684, 65541, 0, 262220, 65541, 1, 196685, 131077, 0, 262221, 131077, 1, 196686, 196613, 0, 262222, 196613, 1, 196687, 262149, 0, 262223, 262149, 1, 524380, 0, 0, 589916, 0, 1, 524381, 65536, 0, 589917, 65536, 1, 524382, 131072, 0, 589918, 131072, 1, 524383, 196608, 0, 589919, 196608, 1, 524384, 262144, 0, 589920, 262144, 1, 524385, 327680, 0, 589921, 327680, 1, 721007, 1, 0, 721008, 65537, 0, 721009, 131073, 0, 721010, 196609, 0, 721011, 262145, 0, 721012, 327681, 0, 721013, 393217, 0, 721014, 458753, 0, 655492, 5, 0, 721028, 5, 1, 655493, 65541, 0, 721029, 65541, 1, 655494, 131077, 0, 721030, 131077, 1, 655495, 196613, 0, 721031, 196613, 1, 655496, 262149, 0, 721032, 262149, 1, 721046, 1, 0, 721047, 65537, 0, 721048, 131073, 0, 721049, 196609, 0, 721050, 262145, 0, 721051, 327681, 0, 721052, 393217, 0, 721053, 458753, 0, 721061, 0, 0, 786597, 0, 1, 721062, 65536, 0, 786598, 65536, 1, 721063, 131072, 0, 786599, 131072, 1, 721064, 196608, 0, 786600, 196608, 1, 721065, 262144, 0, 786601, 262144, 1, 721066, 327680, 0, 786602, 327680, 1, 524472, 5, 0, 590008, 5, 1, 524473, 65541, 0, 590009, 65541, 1, 524474, 131077, 0, 590010, 131077, 1, 524475, 196613, 0, 590011, 196613, 1, 524476, 262149, 0, 590012, 262149, 1, 327878, 1, 0, 327879, 65537, 0, 327880, 131073, 0, 327881, 196609, 0, 327882, 262145, 0, 327883, 327681, 0, 327884, 393217, 0, 327885, 458753, 0, 458970, 5, 0, 524506, 5, 1, 458971, 65541, 0, 524507, 65541, 1, 458972, 131077, 0, 524508, 131077, 1, 458973, 196613, 0, 524509, 196613, 1, 458974, 262149, 0, 524510, 262149, 1, 590059, 0, 0, 655595, 0, 1, 590060, 65536, 0, 655596, 65536, 1, 590061, 131072, 0, 655597, 131072, 1, 590062, 196608, 0, 655598, 196608, 1, 590063, 262144, 0, 655599, 262144, 1, 590064, 327680, 0, 655600, 327680, 1, 721156, 1, 0, 721157, 65537, 0, 721158, 131073, 0, 721159, 196609, 0, 721160, 262145, 0, 721161, 327681, 0, 721162, 393217, 0, 721163, 458753, 0, 721176, 5, 0, 786712, 5, 1, 721177, 65541, 0, 786713, 65541, 1, 721178, 131077, 0, 786714, 131077, 1, 721179, 196613, 0, 786715, 196613, 1, 721180, 262149, 0, 786716, 262149, 1, 655656, 0, 0, 721192, 0, 1, 655657, 65536, 0, 721193, 65536, 1, 655658, 131072, 0, 721194, 131072, 1, 655659, 196608, 0, 721195, 196608, 1, 655660, 262144, 0, 721196, 262144, 1, 655661, 327680, 0, 721197, 327680, 1, 590137, 1, 0, 590138, 65537, 0, 590139, 131073, 0, 590140, 196609, 0, 590141, 262145, 0, 590142, 327681, 0, 590143, 393217, 0, 590144, 458753, 0, 786449, 5, 0, 851985, 5, 1, 786450, 65541, 0, 851986, 65541, 1, 786451, 131077, 0, 851987, 131077, 1, 786452, 196613, 0, 851988, 196613, 1, 786453, 262149, 0, 851989, 262149, 1)
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=993910457 groups=["Player"]]
-position = Vector2(198, 371)
-script = ExtResource("1_mc20k")
-spawn_position = Vector2(199.92, 371.4)
-
-[node name="CollisionPlayer" type="CollisionShape2D" parent="Player" unique_id=375702631 groups=["Player"]]
-position = Vector2(59.99762, -1.4988098)
-rotation = 1.573169
-shape = SubResource("RectangleShape2D_s3sxq")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=746081165]
-position = Vector2(59.999977, -17)
-scale = Vector2(1.0749992, 0.96666664)
-sprite_frames = SubResource("SpriteFrames_5py54")
-animation = &"Fall"
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=649164758]
-position = Vector2(56, -64)
-zoom = Vector2(2.5, 2.5)
-limit_enabled = false
-rotation_smoothing_enabled = true
-
-[node name="Jump" type="AudioStreamPlayer2D" parent="Player" unique_id=1951372469]
-position = Vector2(61, -4)
-stream = ExtResource("5_8m71o")
-volume_db = -2.0
-
-[node name="Button" type="Button" parent="Player" unique_id=885202965]
-offset_left = -174.0
-offset_top = -193.0
-offset_right = -151.0
-offset_bottom = -169.0
-icon = SubResource("CompressedTexture2D_it0h0")
-flat = true
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1935579507]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1887981831]
@@ -1421,6 +1388,56 @@ motion_mirroring = Vector2(740, 0)
 position = Vector2(302, 242.49997)
 scale = Vector2(1.2854165, 1.9537035)
 texture = ExtResource("6_xb73i")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1795475472 groups=["Player"]]
+position = Vector2(198, 371)
+script = ExtResource("1_mc20k")
+spawn_position = Vector2(199.92, 371.4)
+
+[node name="CollisionPlayer" type="CollisionShape2D" parent="Player" unique_id=1083053126 groups=["Player"]]
+position = Vector2(59.99762, -1.4988098)
+rotation = 1.573169
+shape = SubResource("RectangleShape2D_4ayub")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1587629632]
+position = Vector2(59.999977, -17)
+scale = Vector2(1.0749992, 0.96666664)
+sprite_frames = SubResource("SpriteFrames_jpbf8")
+animation = &"Idle_80"
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2060036810]
+position = Vector2(64, -22)
+ignore_rotation = false
+zoom = Vector2(2.5, 2.5)
+
+[node name="TextureRect" type="TextureRect" parent="Player/Camera2D" unique_id=209019154]
+offset_left = 4.0
+offset_top = -129.0
+offset_right = 228.0
+offset_bottom = -89.0
+texture = ExtResource("14_jpbf8")
+
+[node name="Label" type="Label" parent="Player/Camera2D/TextureRect" unique_id=1457959081]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 8.0
+offset_right = 31.0
+offset_bottom = 31.0
+text = "0"
+script = ExtResource("14_4ayub")
+
+[node name="Button" type="Button" parent="Player/Camera2D" unique_id=2006375121]
+offset_left = -231.0
+offset_top = -129.0
+offset_right = -208.0
+offset_bottom = -105.0
+icon = SubResource("CompressedTexture2D_df3rd")
+flat = true
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Player" unique_id=1549676307]
+position = Vector2(61, -4)
+stream = ExtResource("5_8m71o")
+volume_db = -8.0
 
 [node name="Death_Zone" type="Area2D" parent="." unique_id=23487114 groups=["Death"]]
 position = Vector2(183, 426)
@@ -1471,46 +1488,46 @@ sprite_frames = SubResource("SpriteFrames_ocfax")
 animation = &"Idle"
 frame_progress = 0.96412855
 
-[connection signal="pressed" from="Player/Button" to="Player" method="_on_button_pressed"]
+[connection signal="pressed" from="Player/Camera2D/Button" to="Player" method="_on_button_pressed"]
 [connection signal="body_entered" from="Death_Zone" to="Death_Zone" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin" to="Coins/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126643" to="Coins/@Area2D@126643" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126644" to="Coins/@Area2D@126644" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126645" to="Coins/@Area2D@126645" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126646" to="Coins/@Area2D@126646" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126647" to="Coins/@Area2D@126647" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126648" to="Coins/@Area2D@126648" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126649" to="Coins/@Area2D@126649" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126650" to="Coins/@Area2D@126650" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126651" to="Coins/@Area2D@126651" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126652" to="Coins/@Area2D@126652" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126653" to="Coins/@Area2D@126653" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126654" to="Coins/@Area2D@126654" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126655" to="Coins/@Area2D@126655" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126656" to="Coins/@Area2D@126656" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126657" to="Coins/@Area2D@126657" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126658" to="Coins/@Area2D@126658" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126659" to="Coins/@Area2D@126659" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126660" to="Coins/@Area2D@126660" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126661" to="Coins/@Area2D@126661" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126662" to="Coins/@Area2D@126662" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126663" to="Coins/@Area2D@126663" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126664" to="Coins/@Area2D@126664" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126665" to="Coins/@Area2D@126665" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126666" to="Coins/@Area2D@126666" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126667" to="Coins/@Area2D@126667" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126668" to="Coins/@Area2D@126668" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126669" to="Coins/@Area2D@126669" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126670" to="Coins/@Area2D@126670" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126671" to="Coins/@Area2D@126671" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126672" to="Coins/@Area2D@126672" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126673" to="Coins/@Area2D@126673" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126674" to="Coins/@Area2D@126674" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126675" to="Coins/@Area2D@126675" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126676" to="Coins/@Area2D@126676" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126677" to="Coins/@Area2D@126677" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126678" to="Coins/@Area2D@126678" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126679" to="Coins/@Area2D@126679" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126680" to="Coins/@Area2D@126680" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/@Area2D@126681" to="Coins/@Area2D@126681" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84720" to="Coins/@Area2D@84720" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84721" to="Coins/@Area2D@84721" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84722" to="Coins/@Area2D@84722" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84723" to="Coins/@Area2D@84723" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84724" to="Coins/@Area2D@84724" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84725" to="Coins/@Area2D@84725" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84726" to="Coins/@Area2D@84726" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84727" to="Coins/@Area2D@84727" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84728" to="Coins/@Area2D@84728" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84729" to="Coins/@Area2D@84729" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84730" to="Coins/@Area2D@84730" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84731" to="Coins/@Area2D@84731" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84732" to="Coins/@Area2D@84732" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84733" to="Coins/@Area2D@84733" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84734" to="Coins/@Area2D@84734" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84735" to="Coins/@Area2D@84735" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84736" to="Coins/@Area2D@84736" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84737" to="Coins/@Area2D@84737" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84738" to="Coins/@Area2D@84738" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84739" to="Coins/@Area2D@84739" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84740" to="Coins/@Area2D@84740" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84741" to="Coins/@Area2D@84741" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84742" to="Coins/@Area2D@84742" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84743" to="Coins/@Area2D@84743" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84744" to="Coins/@Area2D@84744" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84745" to="Coins/@Area2D@84745" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84746" to="Coins/@Area2D@84746" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84747" to="Coins/@Area2D@84747" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84748" to="Coins/@Area2D@84748" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84749" to="Coins/@Area2D@84749" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84750" to="Coins/@Area2D@84750" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84751" to="Coins/@Area2D@84751" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84752" to="Coins/@Area2D@84752" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84753" to="Coins/@Area2D@84753" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84754" to="Coins/@Area2D@84754" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84755" to="Coins/@Area2D@84755" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84756" to="Coins/@Area2D@84756" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84757" to="Coins/@Area2D@84757" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@84758" to="Coins/@Area2D@84758" method="_on_body_entered"]
 [connection signal="body_entered" from="Ende" to="Ende" method="_on_body_entered"]

@@ -4,10 +4,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	animation.play("Idle")
-	
-	
-
+	animation.play("Idle")	
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"): 
@@ -17,8 +14,5 @@ func _on_body_entered(body: Node2D) -> void:
 			animation.play("Jump")
 
 
-
-
 func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Player"): 
-		animation.play("Idle")
+	pass 

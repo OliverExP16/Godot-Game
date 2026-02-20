@@ -16,9 +16,9 @@ var Limit_end = 120
 func respawn():
 	global_position = spawn_position
 	velocity = Vector2.ZERO
-	took_damage = false 	
+	took_damage = false
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void: 
 	var active = (
 		Input.is_action_just_pressed("Links")
 		or 
@@ -27,7 +27,6 @@ func _physics_process(delta: float) -> void:
 		Input.is_action_just_pressed("Jump")
 	)
 	
-
 	if active: 
 		Current_timer = 0 
 	else: 
@@ -51,15 +50,13 @@ func _physics_process(delta: float) -> void:
 		PlayerJumpsound.play()
 		velocity.y = JUMP_VELOCITY 
 	
-	
-	
 	var direction := Input.get_axis("Links", "Rechts")
 	if direction:
 		velocity.x = direction * SPEED
 		animated_sprite.flip_h = direction < 0; 
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	# Animationen
 	if not is_on_floor():
 		if velocity.y < -10:

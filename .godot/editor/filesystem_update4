@@ -1,9 +1,17 @@
-res://Scene/Level4.tscn
-res://Scene/Level3.tscn
-res://Scene/Level2.tscn
-res://Git simple Anleitung.txt
-res://Ideen_LevelDisgn.txt
-res://Scene/Level_Selection.tscn
-res://Scene/Level1.tscn
-res://Scene/trampoline.tscn
 res://Script/trampoline.gd
+res://Scene/trampoline.tscn
+res://Scene/Level3.tscn
+res://Scene/Level1.tscn
+res://Scene/Level2.tscn
+res://Scene/Level_Selection.tscn
+res://Sachen zum Fixen.txt
+res://Ideen_LevelDisgn.txt
+res://game_manager.tscn
+res://Scene/game_manager.tscn
+res://Scene/game_manager.gd
+res://Scene/coin.tscn
+res://Script/Coin.gd
+res://Script/character_body_2d.gd
+res://Script/Game_Manager.gd
+res://Script/Counter.gd
+res://Scene/Level4.tscn
