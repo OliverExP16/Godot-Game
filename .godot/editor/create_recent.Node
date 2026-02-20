@@ -1,10 +1,11 @@
-TileMapLayer
+CanvasLayer
+Label
 Button
+TileMapLayer
 CollisionShape2D
 Area2D
 AnimatedSprite2D
 StaticBody2D
-Label
 Control
 TileMap
 Camera2D

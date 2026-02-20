@@ -4,17 +4,17 @@ Level 2: fallenede Platformen (X)
 
 Level 3: Trampoline (X)
 
-Level 5: Fan ()
+Level 4: Fan ()
 
-Level 6: Boxen ()
+Level 5: Saw ()
 
-Level 7: Saw ()
+Level 6: Teleporter ()
 
-Level 9:  Teleporter ()
+Level 7: Boxes ()
 
-Level 9: Moving Platform () 
+Level 8: Moving Platform () 
 
-Level 10: Fire  ()
+Level 9: Fire  ()
 
 
 ------------------------------------------

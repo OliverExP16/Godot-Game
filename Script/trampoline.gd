@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"): 
+		animation.play("Jump")
 		if body.global_position.y > 0:  
 			body.bounce(-450)
 			animation.play("Jump")
