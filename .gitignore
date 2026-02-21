@@ -1,5 +1,4 @@
-# Godot 4+ specific
-.godot/                # Engine-Konfiguration
+# Godot 4+ specific              # Engine-Konfiguration
 /android/              # Android Build-Ordner
 .export/               # Exportierte Builds
 .import/               # Importierte Assets (Cache)
