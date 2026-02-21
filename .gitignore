@@ -4,6 +4,7 @@
 .export/               # Exportierte Builds
 .import/               # Importierte Assets (Cache)
 *.import               # einzelne Import-Dateien
+*.cache 
 
 # Temporäre Dateien
 *.log
